@@ -140,7 +140,7 @@ if __name__ == "__main__":
        
         df = input_data.iloc[[icase]]
         raz = 0.0
-        sza = df.sza.values[0]
+        sza = 45
         ar_1 = df.ar_1.values[0]
         d_1 = df.d_1.values[0]
         f_1 = df.f_1.values[0]
