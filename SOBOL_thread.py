@@ -15,7 +15,6 @@ then drive the radiative transfer code to do the calculation
 last modified: 08/20/2022
 """
 
-# import interpScatMatr as interp AS42.757_R160.00_WL1588_D0.95.dat
 from interpScatMatr import interpScatProp as interp
 import os, time, sys, re, subprocess
 import pandas as pd
@@ -31,8 +30,6 @@ import rtcOutput as rtc
 import scipy
 import matplotlib.pyplot as plt
 import math
-
-lookupDictionary = {}
 
 
 REFRAC_INDEX_DICT = {
