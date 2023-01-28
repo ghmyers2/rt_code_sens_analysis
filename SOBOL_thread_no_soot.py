@@ -83,6 +83,16 @@ def prepare_snow_iop(ar, d, reff, f_col, scatt_dir):
 if __name__ == "__main__":
 
     #DESCRIPTIVE VARIABLES OF THE SNOW PACK AND SOOT IMPURITIES
+    
+    thread_number = sys.argv[1]
+    
+    home_loc_rt_code = 'F:/rt_code_orig_copy/rt_code'
+    
+    working_dir = f'F:/thread_{thread_number}'
+    
+    os.makedirs(working_dir)
+    shutil.copytree(home_loc_rt_code, working_dir + '/rt_code')
+    
     # f_imp = 1.0  # ppmw
     rho_snow = 0.1  # g/cm^3
 
@@ -128,8 +138,12 @@ if __name__ == "__main__":
     input_data.rename(columns=dict_param, inplace=True)
 
     num_cases = len(input_data)
-
-    for icase in range(6656, 13312):
+    
+    num_cases_per_thread = num_cases / 1000
+    start_index = num_cases_per_thread*thread_number
+    end_index = num_cases_per_thread*(thread_number + 1)
+    
+    for icase in range(start_index, end_index):
         RSPFILELIST = []
         REFRACFILELIST = []
 
