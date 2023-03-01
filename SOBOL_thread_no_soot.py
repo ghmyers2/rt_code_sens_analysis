@@ -131,9 +131,12 @@ if __name__ == "__main__":
 
     parameter_file_name = '/home/accurt/Shared/SOBOL/param_values_SOBOL.txt'
     input_data = pd.read_csv(parameter_file_name, header=None, delimiter='\s+')
-    dict_param = {0: "sza", 1: "ar_1", 2: "d_1",
-                  3: "f_1", 4: "reff_1", 5: "ar_2", 6: "d_2",
-                  7: "f_2", 8: "reff_2", 9: 'soot_1', 10: "soot_2", 11: 'aod'}
+#     dict_param = {0: "sza", 1: "ar_1", 2: "d_1",
+#                   3: "f_1", 4: "reff_1", 5: "ar_2", 6: "d_2",
+#                   7: "f_2", 8: "reff_2", 9: 'soot_1', 10: "soot_2", 11: 'aod'}
+
+    dict_param = {0: 'ar_1', 1:'d_1', 2:'f_1', 3:'Reff_1', 4:'ar_2', 5:'d_2',
+                  6:'f_2', 7:'Reff_2', 8:'thick_top', 9:'dens_top', 10:'dens_bottom'}
 
     input_data.rename(columns=dict_param, inplace=True)
 
